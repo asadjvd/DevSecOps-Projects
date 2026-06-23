@@ -210,7 +210,7 @@ jobs:
         uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Jerney/${{ matrix.component }}/Dockerfile
-          failure-threshold: warning
+          failure-threshold: error
 
   # ==============================================================
   # STAGE 7: Update K8s Manifest with New Image Tag
