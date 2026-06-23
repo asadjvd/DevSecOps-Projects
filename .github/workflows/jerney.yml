@@ -9,9 +9,10 @@ name: Jerney DevSecOps Pipeline
 
 on:
   push:
-    branches: ["*"]
-  pull_request:
-    branches: ["*"]
+    branches: [main]
+    paths:
+      - 'jerney/**'
+      - '.github/workflows/jerney.yml'
 
 # Security: restrict default permissions to read-only
 permissions:

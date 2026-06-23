@@ -5,12 +5,10 @@ name: CI/CD
 # Exclude the workflow to run on changes to the helm chart
 on:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - 'helm/**'
-      - 'k8s/**'
-      - 'README.md'
+    branches: [main]
+    paths:
+      - 'go-web-app-devops/**'
+      - '.github/workflows/go-web-app.yml'
 
 jobs:
 
