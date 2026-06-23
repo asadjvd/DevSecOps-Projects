@@ -39,12 +39,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: 1.22
+        cache: true
+
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v7
       with:
         version: latest
         working-directory: go-web-app-devops
-        args: run --timeout=5m
+        args: --timeout=5m
   
   push:
     runs-on: ubuntu-latest
