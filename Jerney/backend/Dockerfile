@@ -7,7 +7,7 @@ RUN npm ci && npm cache clean --force
 
 # ---- Production Stage ----
 
-FROM node:20-alpine AS production
+FROM node:22-alpine AS production
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
