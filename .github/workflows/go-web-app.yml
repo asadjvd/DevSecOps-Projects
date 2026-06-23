@@ -23,11 +23,7 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.22
-
-    - name: Install dependencies
-      working-directory: go-web-app-devops
-      run: go mod tidy
-
+        
     - name: Build
       working-directory: go-web-app-devops
       run: go build -o go-web-app
@@ -88,7 +84,7 @@ jobs:
 
     - name: Update tag in Helm chart
       run: |
-        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' go-web-app-devops/helm/go-web-app-chart/values.yaml
+        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' go-web-app-devops/Helm/go-web-app-chart/values.yaml
 
     - name: Commit and push changes
       run: |
